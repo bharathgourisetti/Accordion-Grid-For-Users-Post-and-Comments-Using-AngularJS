@@ -1,0 +1,1 @@
+let usersApp = angular.module('usersApp', []);

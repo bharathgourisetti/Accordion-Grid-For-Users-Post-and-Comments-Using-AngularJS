@@ -1,0 +1,32 @@
+/* Put your css in here */
+.hideBlock{
+  display:none;
+}
+.container{
+    /* background-color: yellow; */
+    width: 96%;
+    margin: 2% 2%;
+    border: 2px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cardBlockContainer{
+    padding: 2% 2%;
+    border-bottom: 2px solid gray;
+    border-bottom-left-radius: 5px;
+    background: gainsboro;
+    font-weight: bold;
+    border-bottom-right-radius: 5px;
+}
+
+.postsCardBlockContainer{
+      margin: 2% 2%;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.cardLabelName{
+  padding: 1% 2% 1% 4%;
+  font-weight: bold;
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="usersApp" >
+<head>
+  <meta charset="utf-8">
+  <title>AngularJS Plunker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+  <script src="userModule.js"></script>
+  <script src="usersService.js"></script>
+  <script src="usersController.js"></script>
+</head>
+<body ng-controller="usersCtrl">
+        <div class="container" ng-repeat="usersDetails in usersListObj">
+             <div ng-repeat="users in usersDetails.user">
+                  <div>
+                     <div id="users_{{users.id}}" class="cardBlockContainer" ng-click="userLabelClick(users.id)"> {{users.id + ") " + users.name}} </div>
+                     <div id="posts_{{users.id}}" class="hideBlock cardLabelName"> Posts </div>
+                     <div id="posts_{{users.id}}" class="container hideBlock" ng-repeat="posts in usersDetails.posts">
+                         <div>
+                           <div id="posts_{{users.id}}" class="hideBlock cardBlockContainer"  ng-click="postsLabelClick(posts.id)">{{posts.id + ") " + posts.body}}</div>
+                           <div id="comments_{{posts.id}}" class="hideBlock cardLabelName">Comments</div>
+                           <div id="comments_{{posts.id}}" class="container hideBlock" ng-repeat="comments in usersDetails.comments">
+                             <div id="comments_{{posts.id}}" class="cardBlockContainer hideBlock"  ng-click="commentsLabelClick(comments.id)">{{comments.id + ") " + comments.name}}</div>
+                           </div>
+                         </div>
+                     </div>
+                  </div>
+             </div>
+          </div>
+</body>
+</html>
